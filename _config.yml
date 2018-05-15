@@ -37,6 +37,12 @@ anchorjs: true                          # if you want to customize anchor. check
 # Disqus settings
 disqus_username: uuau99999
 
+disqus_proxy:
+  shortname: uuau99999
+  username: uuau99999
+  host: disqus-proxy.ycwalker.com
+  port: 443
+
 # Duoshuo settings
 # duoshuo_username: kaijun
 # Share component is depend on Comment so we can NOT use share only.
