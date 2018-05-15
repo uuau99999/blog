@@ -14,7 +14,7 @@ layout: page
             <%- post.subtitle || "" %>
         </h3>
         <div class="post-content-preview">
-            <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>...
+            <%- truncate(strip_html(post.content).split('window.disqusProxy')[0], {length: 200, omission: '...'}) %>...
         </div>
     </a>
     <p class="post-meta">

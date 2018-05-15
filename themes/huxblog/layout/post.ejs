@@ -99,7 +99,7 @@ layout: layout
                 <!-- 多说评论框 end -->
                 <% } %>
 
-                <% if(config['disqus_username']) { %>
+                <% if(config['disqus_username'] && page.comments) { %>
                 <!-- disqus 评论框 start -->
                 <div class="comment">
                     <div id="disqus_thread" class="disqus-thread"></div>
