@@ -50,6 +50,11 @@ duoshuo_share: true                     # set to false if you want to use Commen
 
 
 # Analytics settings
+# Baidu Analytics
+ba_track_id: be487d8575ef4be7f18a9c96d00c8dfd
+# Google Analytics
+ga_track_id: 'UA-119396317-1'            # Format: UA-xxxxxx-xx
+ga_domain: uuau99999.github.io
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
