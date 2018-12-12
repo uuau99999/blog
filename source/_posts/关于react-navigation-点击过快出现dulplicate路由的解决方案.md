@@ -56,3 +56,35 @@ tags: [react native, react navigation]
     }
     ```
     这里通过一个_getCurrentRoute递归方法去找到当前的route，我算出来同时还把它放到了state里面的currentRoute，这样在别的地方也能通过redux 注入currentRoute获取到当前的route信息了。
+
+    ---------------------------
+
+    P.S.
+    对于不使用redux的react navigation v2以上用户，可以用以下方法：
+    在root component：
+    ```
+    ...
+    constructor(props: any) {
+        super(props);
+        this.AppNavigation = createNavigator(...);
+        this.AppNavigation.router.getStateForAction = navigateOnce(this.AppNavigation.router.getStateForAction);
+    }
+
+    render() {
+        return <this.AppNavigation />;
+    }
+    ...
+
+    const navigateOnce = (getStateForAction: any) => (action: any, state: any) => {
+        const { type, routeName } = action;
+        if (
+          state &&
+          (type === NavigationActions.NAVIGATE || type === StackActions.PUSH) &&
+          routeName === state.routes[state.routes.length - 1].routeName
+        ) {
+          return null;
+        } else {
+          return getStateForAction(action, state);
+        }
+    };
+    ```
