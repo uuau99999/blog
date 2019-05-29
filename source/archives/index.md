@@ -1,6 +1,5 @@
 ---
-layout: "archives"
-title: "Archives"
-description: "Hey, this is Archives."
-header-img: "img/tag-bg.jpg"
+title: Posts
+date: 2018-01-05 00:00:00
+type: "posts"
 ---
